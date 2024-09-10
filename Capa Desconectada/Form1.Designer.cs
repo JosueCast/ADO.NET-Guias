@@ -34,6 +34,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnObtenerNoTipado = new System.Windows.Forms.Button();
             this.gridNoTipado = new System.Windows.Forms.DataGridView();
+            this.txtBuscarNt = new System.Windows.Forms.TextBox();
+            this.btnBuscarNt = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTipado)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -71,18 +74,21 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.btnBuscarNt);
             this.groupBox2.Controls.Add(this.btnObtenerNoTipado);
+            this.groupBox2.Controls.Add(this.txtBuscarNt);
             this.groupBox2.Controls.Add(this.gridNoTipado);
             this.groupBox2.Location = new System.Drawing.Point(12, 24);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(374, 355);
+            this.groupBox2.Size = new System.Drawing.Size(374, 412);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DataSet no Tipado";
             // 
             // btnObtenerNoTipado
             // 
-            this.btnObtenerNoTipado.Location = new System.Drawing.Point(91, 299);
+            this.btnObtenerNoTipado.Location = new System.Drawing.Point(128, 299);
             this.btnObtenerNoTipado.Name = "btnObtenerNoTipado";
             this.btnObtenerNoTipado.Size = new System.Drawing.Size(126, 23);
             this.btnObtenerNoTipado.TabIndex = 1;
@@ -98,6 +104,33 @@
             this.gridNoTipado.Size = new System.Drawing.Size(351, 250);
             this.gridNoTipado.TabIndex = 0;
             // 
+            // txtBuscarNt
+            // 
+            this.txtBuscarNt.Location = new System.Drawing.Point(90, 328);
+            this.txtBuscarNt.Name = "txtBuscarNt";
+            this.txtBuscarNt.Size = new System.Drawing.Size(199, 20);
+            this.txtBuscarNt.TabIndex = 2;
+            // 
+            // btnBuscarNt
+            // 
+            this.btnBuscarNt.Location = new System.Drawing.Point(90, 354);
+            this.btnBuscarNt.Name = "btnBuscarNt";
+            this.btnBuscarNt.Size = new System.Drawing.Size(199, 23);
+            this.btnBuscarNt.TabIndex = 3;
+            this.btnBuscarNt.Text = "Buscar Cliente";
+            this.btnBuscarNt.UseVisualStyleBackColor = true;
+            this.btnBuscarNt.Click += new System.EventHandler(this.btnBuscarNt_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(34, 330);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 16);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "&Buscar:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -110,6 +143,7 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridTipado)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridNoTipado)).EndInit();
             this.ResumeLayout(false);
 
@@ -123,6 +157,9 @@
         private System.Windows.Forms.DataGridView gridTipado;
         private System.Windows.Forms.Button btnObtenerNoTipado;
         private System.Windows.Forms.DataGridView gridNoTipado;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnBuscarNt;
+        private System.Windows.Forms.TextBox txtBuscarNt;
     }
 }
 
