@@ -59,6 +59,7 @@
             this.btnObtenerTpiado.TabIndex = 2;
             this.btnObtenerTpiado.Text = "Obtener Datos Tipados";
             this.btnObtenerTpiado.UseVisualStyleBackColor = true;
+            this.btnObtenerTpiado.Click += new System.EventHandler(this.btnObtenerTpiado_Click);
             // 
             // gridTipado
             // 
