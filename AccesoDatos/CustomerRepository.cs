@@ -38,10 +38,10 @@ namespace AccesoDatos
 
         public Customer ObtenerPorId(string Id)
         {
-            var dataTable = new DataTable();
+            
             using (var conexion = DataBase.GetSqlConnection())
             {
-
+                var dataTable = new DataTable();
                 String selectPorId = "";
                 selectPorId = selectPorId + "SELECT [CustomerID] " + "\n";
                 selectPorId = selectPorId + "      ,[CompanyName] " + "\n";
@@ -55,7 +55,7 @@ namespace AccesoDatos
                 selectPorId = selectPorId + "      ,[Phone] " + "\n";
                 selectPorId = selectPorId + "      ,[Fax] " + "\n";
                 selectPorId = selectPorId + "  FROM [dbo].[Customers] " + "\n";
-                selectPorId = selectPorId + "  WHERE CustomerID = '@CustomerID'";
+                selectPorId = selectPorId + "  WHERE CustomerID = @CustomerID";
                 using (SqlCommand comando = new SqlCommand(selectPorId, conexion))
                 {
                     comando.Parameters.AddWithValue("@CustomerID", Id);
