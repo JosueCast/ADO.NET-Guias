@@ -15,6 +15,27 @@ namespace Capa_Desconectada
 {
     public partial class Form1 : Form
     {
+        private void RellenarForm(Customer cliente)
+        {
+            if (cliente != null)
+            {
+                txtCustomerID.Text = cliente.CustomerID;
+                txtCompanyName.Text = cliente.CompanyName;
+                txtContactName.Text = cliente.ContactName;
+                txtContactTitle.Text = cliente.ContactTitle;
+                txtAdress.Text = cliente.Address;
+            }
+            if (cliente == null)
+            {
+                MessageBox.Show("objeto null ");
+            }
+        }
+
+
+
+
+
+
         private CustomerRepository customerRepository= new CustomerRepository();
 
         #region no tipado
@@ -27,6 +48,7 @@ namespace Capa_Desconectada
         private void btnBuscarNt_Click(object sender, EventArgs e)
         {
             var cliente = customerRepository.ObtenerPorId(txtBuscarNt.Text);
+            RellenarForm(cliente);
             if (cliente == null)
             {
                 MessageBox.Show("El objeto es null");
@@ -63,6 +85,7 @@ namespace Capa_Desconectada
         private void btnBuscarTipado_Click(object sender, EventArgs e)
         {
             var customer = adaptador.GetDataByCustomerID(txtBuscarTipado.Text);
+            
             if (customer != null)
             {
                 var objeto1 = customerRepository.ExtraerInformacionCliente(customer);
@@ -116,6 +139,13 @@ namespace Capa_Desconectada
             MessageBox.Show(cliente.ContactTitle);
             MessageBox.Show(cliente.Address);
             return cliente;
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            var cliente = CrearCliente();
+            var actulaizadas = customerRepository.ActualizarCliente(cliente);
+            MessageBox.Show($"{actulaizadas} filas actulizadas");
         }
     }
 }

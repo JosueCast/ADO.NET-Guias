@@ -52,6 +52,7 @@
             this.txtAdress = new System.Windows.Forms.TextBox();
             this.btnInsertarCliente = new System.Windows.Forms.Button();
             this.btnEnviarT = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTipado)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -121,6 +122,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnActualizar);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.btnBuscarNt);
             this.groupBox2.Controls.Add(this.btnObtenerNoTipado);
@@ -145,9 +147,9 @@
             // 
             // btnBuscarNt
             // 
-            this.btnBuscarNt.Location = new System.Drawing.Point(90, 354);
+            this.btnBuscarNt.Location = new System.Drawing.Point(37, 363);
             this.btnBuscarNt.Name = "btnBuscarNt";
-            this.btnBuscarNt.Size = new System.Drawing.Size(199, 23);
+            this.btnBuscarNt.Size = new System.Drawing.Size(77, 23);
             this.btnBuscarNt.TabIndex = 3;
             this.btnBuscarNt.Text = "Buscar Custoemer";
             this.btnBuscarNt.UseVisualStyleBackColor = true;
@@ -278,6 +280,16 @@
             this.btnEnviarT.UseVisualStyleBackColor = true;
             this.btnEnviarT.Click += new System.EventHandler(this.btnEnviarT_Click);
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(271, 363);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(77, 23);
+            this.btnActualizar.TabIndex = 5;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,6 +347,7 @@
         private System.Windows.Forms.TextBox txtAdress;
         private System.Windows.Forms.Button btnInsertarCliente;
         private System.Windows.Forms.Button btnEnviarT;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }
 
