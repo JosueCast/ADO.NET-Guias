@@ -90,6 +90,39 @@ namespace AccesoDatos
         }
 
 
+        public int InsertarCliente(Customer cliente)
+        {
+            using (var conexion = DataBase.GetSqlConnection())
+            {
+                string insertIntoPorId = "";
+                insertIntoPorId = insertIntoPorId + "INSERT INTO [dbo].[Customers] " + "\n";
+                insertIntoPorId = insertIntoPorId + "           ([CustomerID] " + "\n";
+                insertIntoPorId = insertIntoPorId + "           ,[CompanyName] " + "\n";
+                insertIntoPorId = insertIntoPorId + "           ,[ContactName] " + "\n";
+                insertIntoPorId = insertIntoPorId + "           ,[ContactTitle] " + "\n";
+                insertIntoPorId = insertIntoPorId + "           ,[Address]) " + "\n";
+                insertIntoPorId = insertIntoPorId + "     VALUES " + "\n";
+                insertIntoPorId = insertIntoPorId + "           (@CustomerID " + "\n";
+                insertIntoPorId = insertIntoPorId + "           ,@CompanyName " + "\n";
+                insertIntoPorId = insertIntoPorId + "           ,@ContactName " + "\n";
+                insertIntoPorId = insertIntoPorId + "           ,@ContactTitle " + "\n";
+                insertIntoPorId = insertIntoPorId + "           ,@Address)";
+
+                conexion.Open();
+                using (var commando = new SqlCommand(insertIntoPorId, conexion))
+                {
+                    commando.Parameters.AddWithValue("@CustomerID", cliente.CustomerID);
+                    commando.Parameters.AddWithValue("@CompanyName", cliente.CompanyName);
+                    commando.Parameters.AddWithValue("@ContactName", cliente.ContactName);
+                    commando.Parameters.AddWithValue("@ContactTitle", cliente.ContactTitle);
+                    commando.Parameters.AddWithValue("@Address", cliente.Address);
+                    SqlDataAdapter adaptador = new SqlDataAdapter(commando);
+                    adaptador.InsertCommand = commando;
+                    return adaptador.InsertCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
 
 
     }

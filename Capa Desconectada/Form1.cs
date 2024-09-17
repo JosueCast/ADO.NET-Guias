@@ -39,6 +39,16 @@ namespace Capa_Desconectada
 
         }
 
+        private void btnInsertarCliente_Click(object sender, EventArgs e)
+        {
+            var cliente = CrearCliente();
+            int insertados = customerRepository.InsertarCliente(cliente);
+            MessageBox.Show($"{insertados} registrados");
+        }
+
+
+
+
 
         #endregion
 
@@ -56,9 +66,25 @@ namespace Capa_Desconectada
             if (customer != null)
             {
                 var objeto1 = customerRepository.ExtraerInformacionCliente(customer);
+                List<Customer> listaClientes = new List<Customer> { objeto1 };
+
+                // Asignar la lista de clientes al DataGridView
+                gridTipado.DataSource = listaClientes;
                 Console.WriteLine(customer);
             }
         }
+
+
+        private void btnEnviarT_Click(object sender, EventArgs e)
+        {
+            var cliente = CrearCliente();
+            int insetados = adaptador.Insert(cliente.CustomerID, cliente.CompanyName,
+                cliente.ContactName,
+                cliente.ContactTitle, cliente.Address, cliente.City, cliente.Region,
+                cliente.PostalCode, cliente.Country, cliente.Fax);   
+
+        }
+
 
         #endregion
 
@@ -73,5 +99,23 @@ namespace Capa_Desconectada
         }
 
         
+
+        private Customer CrearCliente()
+        {
+            var cliente = new Customer
+            {
+                CustomerID = txtCustomerID.Text,
+                CompanyName = txtCompanyName.Text,
+                ContactName = txtContactName.Text,
+                ContactTitle = txtContactTitle.Text,
+                Address = txtAdress.Text,
+            };
+            MessageBox.Show(cliente.CustomerID);
+            MessageBox.Show(cliente.CompanyName);
+            MessageBox.Show(cliente.ContactName);
+            MessageBox.Show(cliente.ContactTitle);
+            MessageBox.Show(cliente.Address);
+            return cliente;
+        }
     }
 }
