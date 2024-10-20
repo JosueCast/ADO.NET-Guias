@@ -210,6 +210,7 @@ namespace Capa_Desconectada
         {
             int FilasEliminadas = adaptador.EliminarCliente(txtCustomerID.Text);
             MessageBox.Show($"{FilasEliminadas} filas eliminadas");
+
         }
     }
 }
