@@ -94,7 +94,13 @@ namespace Capa_Desconectada
                 // Asignar la lista de clientes al DataGridView
                 gridTipado.DataSource = listaClientes;
 
-                RellenarForm(objeto1);  // Rellenar el formulario con los datos
+                txtCustomerID.Text = objeto1.CustomerID;
+                txtCompanyName.Text = objeto1.CompanyName;
+                txtContactName.Text = objeto1.ContactName;
+                txtContactTitle.Text = objeto1.ContactTitle;
+                txtAdress.Text = objeto1.Address;
+
+
                 Console.WriteLine(customer);
             }
             else
@@ -198,6 +204,12 @@ namespace Capa_Desconectada
             var eliminados = customerRepository.EliminarCliente(txtCustomerID.Text);
             MessageBox.Show($"{eliminados} filas eliminadas");
 
+        }
+
+        private void btnEliminarTipado_Click(object sender, EventArgs e)
+        {
+            int FilasEliminadas = adaptador.EliminarCliente(txtCustomerID.Text);
+            MessageBox.Show($"{FilasEliminadas} filas eliminadas");
         }
     }
 }

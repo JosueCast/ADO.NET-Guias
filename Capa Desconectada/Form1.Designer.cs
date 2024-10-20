@@ -55,6 +55,7 @@
             this.btnInsertarCliente = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEliminarTipado = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTipado)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -63,6 +64,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnEliminarTipado);
             this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.btnEnviarT);
             this.groupBox1.Controls.Add(this.label2);
@@ -314,6 +316,16 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // btnEliminarTipado
+            // 
+            this.btnEliminarTipado.Location = new System.Drawing.Point(234, 406);
+            this.btnEliminarTipado.Name = "btnEliminarTipado";
+            this.btnEliminarTipado.Size = new System.Drawing.Size(103, 23);
+            this.btnEliminarTipado.TabIndex = 10;
+            this.btnEliminarTipado.Text = "&Eliminar";
+            this.btnEliminarTipado.UseVisualStyleBackColor = true;
+            this.btnEliminarTipado.Click += new System.EventHandler(this.btnEliminarTipado_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,6 +386,7 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnEliminarTipado;
     }
 }
 

@@ -6,3 +6,10 @@
     {
     }
 }
+
+namespace Capa_Desconectada.NorthwindTableAdapters {
+    
+    
+    public partial class CustomersTableAdapter {
+    }
+}
