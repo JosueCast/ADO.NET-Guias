@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnEnviarT = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnObtenerTpiado = new System.Windows.Forms.Button();
             this.btnBuscarTipado = new System.Windows.Forms.Button();
             this.txtBuscarTipado = new System.Windows.Forms.TextBox();
             this.gridTipado = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscarNt = new System.Windows.Forms.Button();
             this.btnObtenerNoTipado = new System.Windows.Forms.Button();
@@ -51,8 +53,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtAdress = new System.Windows.Forms.TextBox();
             this.btnInsertarCliente = new System.Windows.Forms.Button();
-            this.btnEnviarT = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTipado)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -61,6 +62,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.btnEnviarT);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnObtenerTpiado);
@@ -69,11 +71,21 @@
             this.groupBox1.Controls.Add(this.gridTipado);
             this.groupBox1.Location = new System.Drawing.Point(392, 24);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(376, 412);
+            this.groupBox1.Size = new System.Drawing.Size(376, 498);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DataSet Tipado";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnEnviarT
+            // 
+            this.btnEnviarT.Location = new System.Drawing.Point(234, 354);
+            this.btnEnviarT.Name = "btnEnviarT";
+            this.btnEnviarT.Size = new System.Drawing.Size(103, 23);
+            this.btnEnviarT.TabIndex = 8;
+            this.btnEnviarT.Text = "&Enviar";
+            this.btnEnviarT.UseVisualStyleBackColor = true;
+            this.btnEnviarT.Click += new System.EventHandler(this.btnEnviarT_Click);
             // 
             // label2
             // 
@@ -130,10 +142,20 @@
             this.groupBox2.Controls.Add(this.gridNoTipado);
             this.groupBox2.Location = new System.Drawing.Point(12, 24);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(374, 412);
+            this.groupBox2.Size = new System.Drawing.Size(374, 498);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DataSet no Tipado";
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(271, 363);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(77, 23);
+            this.btnActualizar.TabIndex = 5;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // label1
             // 
@@ -270,31 +292,21 @@
             this.btnInsertarCliente.UseVisualStyleBackColor = true;
             this.btnInsertarCliente.Click += new System.EventHandler(this.btnInsertarCliente_Click);
             // 
-            // btnEnviarT
+            // btnUpdate
             // 
-            this.btnEnviarT.Location = new System.Drawing.Point(234, 354);
-            this.btnEnviarT.Name = "btnEnviarT";
-            this.btnEnviarT.Size = new System.Drawing.Size(103, 23);
-            this.btnEnviarT.TabIndex = 8;
-            this.btnEnviarT.Text = "&Enviar";
-            this.btnEnviarT.UseVisualStyleBackColor = true;
-            this.btnEnviarT.Click += new System.EventHandler(this.btnEnviarT_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Location = new System.Drawing.Point(271, 363);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(77, 23);
-            this.btnActualizar.TabIndex = 5;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            this.btnUpdate.Location = new System.Drawing.Point(27, 406);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(103, 23);
+            this.btnUpdate.TabIndex = 9;
+            this.btnUpdate.Text = "&Actualizar";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1085, 450);
+            this.ClientSize = new System.Drawing.Size(1085, 571);
             this.Controls.Add(this.btnInsertarCliente);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtAdress);
@@ -348,6 +360,7 @@
         private System.Windows.Forms.Button btnInsertarCliente;
         private System.Windows.Forms.Button btnEnviarT;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
 

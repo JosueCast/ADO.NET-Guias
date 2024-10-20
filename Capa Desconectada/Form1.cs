@@ -85,7 +85,7 @@ namespace Capa_Desconectada
         private void btnBuscarTipado_Click(object sender, EventArgs e)
         {
             var customer = adaptador.GetDataByCustomerID(txtBuscarTipado.Text);
-            
+
             if (customer != null)
             {
                 var objeto1 = customerRepository.ExtraerInformacionCliente(customer);
@@ -93,8 +93,15 @@ namespace Capa_Desconectada
 
                 // Asignar la lista de clientes al DataGridView
                 gridTipado.DataSource = listaClientes;
+
+                RellenarForm(objeto1);  // Rellenar el formulario con los datos
                 Console.WriteLine(customer);
             }
+            else
+            {
+                MessageBox.Show("Cliente no encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
 
@@ -146,6 +153,44 @@ namespace Capa_Desconectada
             var cliente = CrearCliente();
             var actulaizadas = customerRepository.ActualizarCliente(cliente);
             MessageBox.Show($"{actulaizadas} filas actulizadas");
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            var fila = adaptador.GetDataByCustomerID(txtCustomerID.Text);
+
+            if (fila != null)
+            {
+                var datoOriginal = customerRepository.ExtraerInformacionCliente(fila);
+                var datosModificados = CrearCliente();
+
+                //var filas = adaptador.ActualizarCliente(datosModificados.CustomerID,
+                //  datosModificados.CompanyName,
+                //  datosModificados.ContactName,
+                //  datosModificados.ContactTitle,
+                //  datosModificados.Address,
+                //  datosModificados.City,
+                //  datosModificados.Region,
+                //  datosModificados.PostalCode,
+                //  datosModificados.Country,
+                //  datosModificados.Phone,
+                //  datosModificados.Fax, datoOriginal.CustomerID);
+
+
+                var filas = adaptador.Consulta1SoloObjeto(datosModificados.CustomerID,
+                datosModificados.CompanyName,
+                datosModificados.ContactName,
+                datosModificados.ContactTitle,
+                datosModificados.Address,
+                datosModificados.City,
+                datosModificados.Region,
+                datosModificados.PostalCode,
+                datosModificados.Country,
+                datosModificados.Phone,
+                datosModificados.Fax);
+
+                MessageBox.Show($"{filas} filas modificadas");
+            }
         }
     }
 }
