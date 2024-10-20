@@ -192,5 +192,12 @@ namespace Capa_Desconectada
                 MessageBox.Show($"{filas} filas modificadas");
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            var eliminados = customerRepository.EliminarCliente(txtCustomerID.Text);
+            MessageBox.Show($"{eliminados} filas eliminadas");
+
+        }
     }
 }
